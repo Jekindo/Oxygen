@@ -1,0 +1,52 @@
+.page-footer {
+	background-color: get-color('footer-bg');
+
+    &__top {
+		@include aligned-flex;
+		flex-direction: column;
+        padding-top: 110px;
+        padding-bottom: 60px;
+    }
+
+	&__logo {
+		position: relative;
+
+		margin-bottom: 70px;
+		
+		&::after {
+			@include underlined(-24px, 50%, 150px);
+			transform: translateX(-50%);
+		}
+	}
+	
+	&__socials {
+		margin-bottom: 65px;
+	}
+
+	&__adress {
+		margin-bottom: 57px;
+	}
+	
+    &__bottom {
+        padding: 40px 0;
+
+        background-color: get-color("copyright-bg");
+    }
+
+    &__copyright {
+        text-align: center;
+        color: get-color("copyright-text");
+        font-weight: 400;
+        font-size: 12px;
+    }
+
+	&__icon {
+		display: block;
+		width: 9px;
+		height: 9px;
+		transform: rotate(45deg);
+		
+		border-left: 1px solid get-color(primary-white);
+		border-top: 1px solid get-color(primary-white);
+	}
+}

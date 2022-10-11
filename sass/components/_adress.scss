@@ -1,0 +1,22 @@
+.adress {
+    color: get-color("adress-text");
+    font-weight: 400;
+    font-size: 14px;
+
+    &__item {
+        text-align: center;
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.adress__link {
+	color: inherit;
+
+	&:hover {
+		color: get-color("primary-white");
+		text-decoration: underline;
+	}
+}

@@ -1,0 +1,32 @@
+.features {
+    position: relative;
+
+    padding-top: 100px;
+    padding-bottom: 180px;
+
+    background-color: get-color("section-bg");
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        height: 100%;
+        width: 50%;
+
+        object-fit: cover;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__content {
+        flex-basis: 500px;
+    }
+
+    &__section-title {
+        margin-bottom: 70px;
+    }
+}

@@ -1,0 +1,38 @@
+.team {
+    @extend %section;
+
+	background-color: get-color('section-bg');
+
+    &__section-title {
+        margin-bottom: 102px;
+    }
+
+    &__list {
+        @extend %grid;
+    }
+
+    &__item {
+        @extend %card;
+        text-align: center;
+    }
+
+    &__image {
+        margin-bottom: 35px;
+    }
+
+    &__name {
+		margin-bottom: 12px;
+		
+        color: get-color("secondary-title-text");
+        text-transform: uppercase;
+		font-family: 'Montserrat', sans-serif;
+		@extend %small-bold;
+    }
+
+	&__position {
+		@extend %no-m-b;
+		color: get-color("member-position-text");
+		font-size: 12px;
+		line-height: 1.3;
+	}
+}

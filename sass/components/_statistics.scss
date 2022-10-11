@@ -1,0 +1,36 @@
+.statistics {
+    
+    &__list {
+        @include centered-flex;
+    }
+
+    &__amount {
+        margin-bottom: 9px;
+
+        color: get-color("primary-title-text");
+        font-family: "Montserrat", sans-serif;
+        @include font-size(700, 60px, 1.21);
+    }
+
+    &__category {
+        @extend %no-m-b;
+
+        color: get-color("secondary-accent");
+        font-weight: 400;
+    }
+}
+
+.statistics__item {
+    flex-basis: 100%;
+	padding-top: 160px;
+    padding-bottom: 160px;
+
+    text-align: center;
+    cursor: default;
+
+    @include transition(transform);
+
+    &:hover {
+        transform: scale($big-scale);
+    }
+}

@@ -1,0 +1,21 @@
+.socials {
+    display: flex;
+
+    &__item:not(:last-child) {
+        margin-right: 30px;
+    }
+}
+
+.socials__link {
+	padding: 5px;
+
+	color: get-color("primary-white");
+	text-transform: uppercase;
+	@include font-size(inherit, 12px, 1.25, 0.25em);
+
+	@include transition(color);
+
+	&:hover {
+		color: get-color('adress-text');
+	}
+}

@@ -1,0 +1,153 @@
+.contact {
+    position: relative;
+
+    @extend %section;
+
+    &__section-title {
+        margin-bottom: 94px;
+    }
+
+    &__form {
+        max-width: 570px;
+    }
+
+    &__user-data {
+        @extend %fieldset;
+        margin-bottom: 50px;
+    }
+
+    &__textarea {
+        height: 156px;
+        resize: none;
+    }
+
+    // Map
+
+    &__location {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        height: 100%;
+        width: 44%;
+
+        cursor: pointer;
+    }
+
+    &__google-map {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.contact__field,
+.contact__field-comment {
+    position: relative;
+    display: block;
+}
+
+.contact__field {
+    &:not(:last-child) {
+        margin-bottom: 35px;
+    }
+}
+
+.contact__field-comment {
+    margin-bottom: 40px;
+}
+
+.contact__input,
+.contact__textarea {
+    width: 100%;
+    padding: 12px 10px;
+
+    border: none;
+    border-bottom: 2px solid get-color("primary-text");
+
+    outline: none;
+
+    @include transition(border-color);
+
+    .contact__field:hover &,
+    .contact__field-comment:hover &,
+    &:focus {
+        border-color: get-color("accent");
+    }
+}
+
+.contact__label {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+
+    color: get-color("label-text");
+    @include font-size(400, 12px, 1.67);
+    letter-spacing: 0.23em;
+
+    @include transition(transform, color);
+    transform-origin: center left;
+
+    .contact__field:hover &,
+    .contact__field-comment:hover & {
+        color: get-color("accent");
+    }
+
+    .contact__input:focus + &,
+    .contact__textarea:focus + & {
+        color: get-color("accent");
+        transform: translateY(-35px) scale(0.9);
+    }
+
+    .contact__input:not(:placeholder-shown) + &,
+    .contact__textarea:not(:placeholder-shown) + & {
+        transform: translateY(-30px) scale(0.9);
+    }
+}
+
+.contact__button {
+	position: relative;
+
+	padding: 15px 58px;
+
+	border: none;
+
+	overflow: hidden;
+	background-color: get-color("button-bg");
+	color: get-color("primary-white");
+	cursor: pointer;
+	font-family: "Montserrat", sans-serif;
+	@include font-size(700, 11px, 1.18);
+	letter-spacing: 0.125em;
+
+	@include transition(background-color, box-shadow);
+
+	&::before {
+		content: "";
+
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translate(-150%, -50%) rotate(30deg);
+
+		height: 200%;
+		width: 30px;
+
+		@include transition(transform);
+		transition-duration: 750ms;
+	}
+
+	&:hover::before,
+	&:focus::before {
+		background-color: get-color("primary-white");
+		transform: translate(250px, -50%) rotate(30deg);
+		transition-delay: 150ms;
+	}
+
+	&:hover,
+	&:focus {
+		box-shadow: inset 0 0 0.5em 0 #ffc814, 0 0 0.5em 0 #ffc814;
+		background-color: get-color("accent");
+	}
+}

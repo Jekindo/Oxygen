@@ -1,0 +1,116 @@
+.expertise {
+    @extend %section;
+
+    &__section-title {
+        margin-bottom: 90px;
+    }
+
+    &__content {
+        display: flex;
+        align-items: flex-start;
+        gap: $card-gap;
+        margin-bottom: 110px;
+    }
+
+    // Cards
+
+    &__card-set {
+        display: flex;
+        justify-content: center;
+        gap: $card-gap;
+    }
+
+    &__icon {
+        flex-shrink: 0;
+        width: 50px;
+        height: 50px;
+    }
+
+    &__card{
+		background-color: get-color('primary-white');
+    }
+
+    &__card-title {
+        margin-bottom: 15px;
+
+        color: get-color("secondary-title-text");
+        text-transform: uppercase;
+        font-family: "Raleway", sans-serif;
+		@extend %small-bold;
+		letter-spacing: 0.27em;
+    }
+
+    &__card-text {
+		@extend %no-m-b;
+		
+        color: get-color("secondary-text");
+    }
+}
+
+
+.expertise__card {
+	flex-basis: calc((100% - 2 * #{$card-gap}) / 3);
+	display: flex;
+	column-gap: 35px;
+	padding: 30px;
+
+	border: 1px solid transparent;
+	border-radius: 30px;
+	
+	cursor: default;
+
+	@include transition(border-color, transform, box-shadow);
+	
+	&:hover {
+		border-color: get-color('section-bg');
+		transform: scale($small-scale);
+		box-shadow: $box-shadow;	
+	}
+}
+
+// Rating
+
+.rating {
+    width: 370px;
+    padding: 5px 0;
+    flex-shrink: 0;
+
+    color: get-color("rating-text");
+    text-transform: uppercase;
+    @include font-size(400, 11px, 1.82, 0.06em);
+
+    &__item:not(:last-child) {
+        margin-bottom: 25px;
+    }
+
+    &__bar {
+        position: relative;
+
+        height: 2px;
+        margin-bottom: 4px;
+
+        background-color: get-color("rating-bar");
+    }
+
+    &__signature {
+        text-transform: uppercase;
+    }
+}
+
+.rating__percentage {
+    position: relative;
+
+    display: block;
+    height: 100%;
+
+    background-color: get-color("rating-text");
+
+    &::before {
+        content: attr(a);
+
+        position: absolute;
+        right: 0;
+        top: 4px;
+        transform: translateX(calc(50% + 4px));
+    }
+}

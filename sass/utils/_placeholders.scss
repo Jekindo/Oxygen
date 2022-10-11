@@ -1,0 +1,46 @@
+%section {
+	padding-top: 140px;
+	padding-bottom: 160px;
+}
+
+%centered-x {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+%no-appearance {
+	appearance: none;
+	position: absolute;
+}
+
+%no-m-b {
+	margin-bottom: 0;
+}
+
+%grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: $card-gap;
+}
+
+%card {
+	flex-basis: calc((100% - 2 * #{$card-gap}) / 3);
+}
+
+%small-bold {
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 1.21;
+}
+
+%centered-absolute {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+%fieldset {
+	border: none;
+	padding: 0;
+}

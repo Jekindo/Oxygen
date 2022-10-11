@@ -1,0 +1,37 @@
+.mouse {
+    display: block;
+    width: 26px;
+    height: 43px;
+
+    border: 2px solid get-color("primary-white");
+    border-radius: 100px;
+
+    &__dot {
+        position: absolute;
+        top: 8px;
+        @extend %centered-x;
+
+        width: 6px;
+        height: 6px;
+
+        border-radius: 50%;
+
+        background-color: get-color("primary-white");
+
+        animation: scroll-down 6000ms get-transition("tf") 1500ms infinite;
+    }
+}
+
+@keyframes scroll-down {
+    0% {
+        transform: translate(-50%, 0);
+    }
+
+    25% {
+        transform: translate(-50%, 19px);
+    }
+
+    100% {
+        transform: translate(-50%, 0);
+    }
+}

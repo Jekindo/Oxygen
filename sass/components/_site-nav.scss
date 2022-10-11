@@ -1,0 +1,34 @@
+.site-nav {
+    @include aligned-flex;
+
+    &__item:not(:last-child) {
+        margin-right: 45px;
+    }
+}
+
+.site-nav__link {
+    position: relative;
+    display: inline-block;
+
+    padding: 40px 10px;
+
+    color: inherit;
+    text-transform: uppercase;
+    font-family: "Raleway", sans-serif;
+    @include font-size(700, 12px, 1.16, 0.037em);
+
+    @include transition(color, transform);
+
+    &:hover,
+    &:focus {
+        color: get-color("accent");
+
+		&:not(.site-nav__link--active) {
+			transform: scale($big-scale) rotate(-15deg);
+		}
+    }
+
+    &--active::after {
+        @include underlined(20px, 0);
+    }
+}

@@ -1,0 +1,53 @@
+.portfolio {
+    padding-top: 170px;
+
+    &__head {
+        @include aligned-flex;
+        justify-content: space-between;
+        margin-bottom: 100px;
+    }
+}
+
+.portfolio__link {
+    position: relative;
+
+    @include centered-flex;
+    padding-top: 41px;
+    padding-bottom: 41px;
+
+    background-color: get-color("section-bg");
+    color: get-color("primary-title-text");
+    font-family: "Montserrat", sans-serif;
+	@extend %small-bold;
+	letter-spacing: 0.075em;
+
+    @include transition(color);
+    transition-duration: 1000ms;
+
+    &:hover, 
+    &:focus {
+        color: get-color("accent");
+    }
+
+    &::before,
+    &::after {
+        transform: scale(0);
+        @include transition(transform);
+        transition-duration: 1000ms;
+    }
+
+    &::before {
+        @include overlined(0, 0);
+        transform-origin: center left;
+    }
+
+    &::after {
+        @include underlined(0, 0);
+        transform-origin: center right;
+    }
+
+    &:hover::before,
+    &:hover::after {
+        transform: scale(1);
+    }
+}

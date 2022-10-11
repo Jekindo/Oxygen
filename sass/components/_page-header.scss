@@ -1,0 +1,20 @@
+.page-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    width: 100%;
+
+    background-color: get-color("primary-white");
+
+    &__container {
+        max-width: 1350px;
+    }
+
+    &__nav {
+        @include aligned-flex;
+        justify-content: space-between;
+        // min-height: 94px;
+    }
+}

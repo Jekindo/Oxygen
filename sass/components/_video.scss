@@ -1,0 +1,49 @@
+.video {
+    padding-top: 120px;
+
+    text-align: center;
+    font-family: "Merriweather", serif;
+    font-style: italic;
+    font-weight: 300;
+
+    &__container {
+        max-width: 650px;
+		margin-bottom: 150px;
+    }
+
+    &__quote {
+        margin-bottom: 60px;
+
+        color: get-color("primary-title-text");
+        font-size: 18px;
+        line-height: 2;
+    }
+
+    &__quote-author {
+		@extend %no-m-b;
+		
+        color: get-color("author-text");
+        @include font-size(inherit, 14px, 2.29);
+    }
+}
+
+.video__content {
+	position: relative;
+}
+
+.video__icon-play {
+	@extend %centered-absolute;
+	z-index: 2;
+	
+	display: block;
+	width: 55px;
+	height: 65px;
+
+	cursor: pointer;
+
+	@include transition(transform);
+
+	&:hover {
+		transform: translate(-50%, -50%) scale($big-scale);
+	}
+}
