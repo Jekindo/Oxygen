@@ -127,22 +127,22 @@
 		content: "";
 
 		position: absolute;
-		top: 50%;
-		left: 0;
-		transform: translate(-150%, -50%) rotate(30deg);
+		top: 0;
+		left: -60px;
+		transform: skew(-45deg) translateX(0);
+		
+		display: block;
+		height: 100%;
+		width: 35px;
 
-		height: 200%;
-		width: 30px;
-
-		@include transition(transform);
-		transition-duration: 750ms;
+		background-color: rgba(get-color('primary-white'), .7);
+		
 	}
-
+	
 	&:hover::before,
 	&:focus::before {
-		background-color: get-color("primary-white");
-		transform: translate(250px, -50%) rotate(30deg);
-		transition-delay: 150ms;
+		transition: transform 750ms ease-in-out;
+		transform: skew(-45deg) translateX(300px);
 	}
 
 	&:hover,
